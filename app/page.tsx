@@ -27,7 +27,7 @@ export default function Home() {
         mx={"auto"}
         textAlign={"center"}
         animation={"flicker 1s linear infinite"}
-        fontFamily={"Comic Neue, Comic Sans MS, cursive"}
+        fontFamily={"'Comic Neue', Comic Neue, Comic Sans MS, cursive"}
         size="3xl"
       >
         Rizzdolia
@@ -48,10 +48,8 @@ export default function Home() {
           cursor={"pointer"}
           userSelect={"none"}
           // On hover show a full 7 color rainbow gradient
-          _hover={{
-            backgroundImage:
-              "linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet)",
-          }}
+
+          backgroundImage="linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet)"
         >
           {!flipped && (
             <motion.img
