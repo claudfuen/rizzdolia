@@ -28,6 +28,7 @@ export default function Home() {
         textAlign={"center"}
         animation={"flicker 1s linear infinite"}
         size="3xl"
+        fontFamily={"Comic Neue, Comic Sans MS, Comic Sans, cursive"}
       >
         Rizzdolia
       </Heading>
@@ -66,6 +67,7 @@ export default function Home() {
               fontSize={"3xl"}
               transform={"rotateX(180deg)"}
               px={16}
+              fontFamily={"Comic Neue, Comic Sans MS, Comic Sans, cursive"}
             >
               got infinite?
             </Text>
