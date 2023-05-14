@@ -9,6 +9,11 @@ const flipAnimation = {
   visible: { rotateX: 180 },
 };
 
+const nudgeAnimation = {
+  initial: { y: 0 },
+  animate: { y: [0, -10, 0] },
+};
+
 export default function Home() {
   const [flipped, setFlipped] = useState(false);
 
@@ -31,7 +36,6 @@ export default function Home() {
         initial="hidden"
         animate={flipped ? "visible" : "hidden"}
         variants={flipAnimation}
-        // style={{ width: "100%", maxWidth: "2xl" }}
       >
         <Flex
           minH={"96"}
@@ -45,7 +49,16 @@ export default function Home() {
           cursor={"pointer"}
           userSelect={"none"}
         >
-          {!flipped && <img src="julian.png" alt="infinite" />}
+          {!flipped && (
+            <motion.img
+              variants={nudgeAnimation}
+              animate="animate"
+              initial="initial"
+              transition={{ yoyo: Infinity, duration: 1 }}
+              src="julian.png"
+              alt="infinite"
+            />
+          )}
           {flipped && (
             <Text
               color={"black"}
