@@ -6,6 +6,7 @@ const inter = Comic_Neue({
   weight: ["400", "700"],
   subsets: ["latin"],
   fallback: ["Comic Sans MS", "cursive"],
+  preload: true,
 });
 
 export const metadata = {
