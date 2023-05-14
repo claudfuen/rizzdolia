@@ -1,12 +1,63 @@
-import Image from "next/image";
+/* eslint-disable @next/next/no-img-element */
+"use client";
+import { Box, Center, Flex, Heading, Text, VStack } from "@chakra-ui/react";
+import { useState } from "react";
+import { motion } from "framer-motion";
+
+const flipAnimation = {
+  hidden: { rotateX: 0 },
+  visible: { rotateX: 180 },
+};
 
 export default function Home() {
+  const [flipped, setFlipped] = useState(false);
+
+  const handleClick = () => {
+    setFlipped(!flipped);
+  };
+
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div>
-        <h1>Rizzdolia</h1>
-        <img src="julian.png" className="w-full max-h-32" alt="infinite" />
-      </div>
-    </main>
+    <VStack w={"full"} py={16} gap={8} px={4}>
+      <Heading
+        mx={"auto"}
+        textAlign={"center"}
+        animation={"flicker 1s linear infinite"}
+        fontFamily={"Comic Sans MS, cursive"}
+        size="3xl"
+      >
+        Rizzdolia
+      </Heading>
+      <motion.div
+        initial="hidden"
+        animate={flipped ? "visible" : "hidden"}
+        variants={flipAnimation}
+        // style={{ width: "100%", maxWidth: "2xl" }}
+      >
+        <Flex
+          minH={"96"}
+          alignItems={"center"}
+          justifyContent={"center"}
+          onClick={handleClick}
+          bg={"gray.100"}
+          rounded={"xl"}
+          w={"full"}
+          maxW={"2xl"}
+          cursor={"pointer"}
+          userSelect={"none"}
+        >
+          {!flipped && <img src="julian.png" alt="infinite" />}
+          {flipped && (
+            <Text
+              color={"black"}
+              fontSize={"3xl"}
+              transform={"rotateX(180deg)"}
+              px={16}
+            >
+              got infinite?
+            </Text>
+          )}
+        </Flex>
+      </motion.div>
+    </VStack>
   );
 }
