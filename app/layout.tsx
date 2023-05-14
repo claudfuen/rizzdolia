@@ -1,8 +1,11 @@
 import "./globals.css";
-import { Inter } from "next/font/google";
+import { Comic_Neue } from "next/font/google";
 import { Providers } from "./providers";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Comic_Neue({
+  weight: ["400", "700"],
+  subsets: ["latin"],
+});
 
 export const metadata = {
   title: "Rizzdolia",
@@ -19,7 +22,7 @@ export default function RootLayout({
       <body
         className={inter.className}
         style={{
-          fontFamily: "Comic Sans MS, cursive",
+          fontFamily: "Comic Neue, Comic Sans MS, cursive",
         }}
       >
         <Providers>{children}</Providers>
