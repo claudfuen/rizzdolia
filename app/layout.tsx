@@ -5,6 +5,7 @@ import { Providers } from "./providers";
 const inter = Comic_Neue({
   weight: ["400", "700"],
   subsets: ["latin"],
+  fallback: ["Comic Sans MS", "cursive"],
 });
 
 export const metadata = {
@@ -19,13 +20,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body
-        className={inter.className}
-        style={{
-          fontFamily:
-            "'Comic Neue', Comic Neue, ComicNeue, Comic Sans MS, cursive",
-        }}
-      >
+      <body className={inter.className}>
         <Providers>{children}</Providers>
       </body>
     </html>

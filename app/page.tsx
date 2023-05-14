@@ -27,7 +27,6 @@ export default function Home() {
         mx={"auto"}
         textAlign={"center"}
         animation={"flicker 1s linear infinite"}
-        fontFamily={"'Comic Neue', Comic Neue, Comic Sans MS, cursive"}
         size="3xl"
       >
         Rizzdolia
