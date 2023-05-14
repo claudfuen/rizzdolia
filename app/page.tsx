@@ -42,12 +42,16 @@ export default function Home() {
           alignItems={"center"}
           justifyContent={"center"}
           onClick={handleClick}
-          bg={"gray.100"}
           rounded={"xl"}
           w={"full"}
           maxW={"2xl"}
           cursor={"pointer"}
           userSelect={"none"}
+          // On hover show a full 7 color rainbow gradient
+          _hover={{
+            backgroundImage:
+              "linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet)",
+          }}
         >
           {!flipped && (
             <motion.img

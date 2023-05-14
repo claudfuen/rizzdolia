@@ -22,7 +22,7 @@ export default function RootLayout({
       <body
         className={inter.className}
         style={{
-          fontFamily: "Comic Neue, Comic Sans MS, cursive",
+          fontFamily: "Comic Neue, ComicNeue, Comic Sans MS, cursive",
         }}
       >
         <Providers>{children}</Providers>
